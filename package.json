@@ -13,7 +13,7 @@
     "postinstall": "ng build --prod"
   },"engines":{
     "node": "16.6.1",
-    "npm": "7.70.3"
+    "npm": "7.20.3"
   },
   "private": true,
   "dependencies": {
