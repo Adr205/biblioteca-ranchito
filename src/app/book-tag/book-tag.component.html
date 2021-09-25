@@ -1,0 +1,59 @@
+<div *ngFor="let tag of tags"  class="book-container">
+    <div class="book-image">
+        <a routerLink='/book/{{tag.id}}'>
+            <img src={{tag.imagen}} alt="">
+        </a>
+    </div>
+    <div class="book-info">
+        <p class="book-title">{{tag.title}}</p>
+        <p class="book-author">{{tag.autor}}</p>
+    </div>
+</div>
+
+<!-- <div class="book-container">
+    <div class="book-image">
+        <a href="#">
+            <img src="https://i.ibb.co/SJLJh92/IMG-3661.jpg" alt="">
+        </a>
+    </div>
+    <div class="book-info">
+        <p class="book-title">Reiki Sistema Tradicional Japones</p>
+        <p class="book-author">Jhonny De' Carli</p>
+    </div>
+</div>
+
+<div class="book-container">
+    <div class="book-image">
+        <a routerLink='/book/1'>
+            <img src="https://i.ibb.co/bN78b2B/IMG-3662.jpg" alt="">
+        </a>
+    </div>
+    <div class="book-info">
+        <p class="book-title">Lazos de amor</p>
+        <p class="book-author">Brian Weiss</p>
+    </div>
+</div>
+
+<div class="book-container">
+    <div class="book-image">
+        <a href="#">
+            <img src="https://i.ibb.co/k900qkv/IMG-3663.jpg" alt="">
+        </a>
+    </div>
+    <div class="book-info">
+        <p class="book-title">A travez del tiempo</p>
+        <p class="book-author">Brian Weiss</p>
+    </div>
+</div>
+
+<div class="book-container">
+    <div class="book-image">
+        <a href="#">
+            <img src="https://i.ibb.co/wrZPj5G/IMG-3664.jpg" alt="">
+        </a>
+    </div>
+    <div class="book-info">
+        <p class="book-title">Los mensajes de los Sabios</p>
+        <p class="book-author">Brian Weiss</p>
+    </div>
+</div>  -->
