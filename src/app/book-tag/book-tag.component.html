@@ -1,6 +1,6 @@
 <div *ngFor="let tag of tags"  class="book-container">
     <div class="book-image">
-        <a routerLink='/book/{{tag.id}}'>
+        <a routerLink='/book/{{tag.id}}' [state]="{data: this.tag}">
             <img src={{tag.imagen}} alt="">
         </a>
     </div>

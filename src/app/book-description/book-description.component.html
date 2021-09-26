@@ -1,1 +1,51 @@
 <p>works</p>
+<div class="description-container">
+    <h1 id="titulo">{{titulo}}</h1>
+    <div class="description-up">
+        <img src={{imagen}} alt={{titulo}}>
+        <p>Sinopsis</p>
+        <p class="sinopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facere itaque cum
+            doloremque fugiat, nobis
+            aspernatur quas est quibusdam pariatur, enim perspiciatis saepe quo. Sit molestiae tempore quae earum iste?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, aut quisquam, eius unde eum non ducimus ut
+            animi neque id ex vel. Necessitatibus, vitae? Animi mollitia quidem reiciendis sit corrupti! Lorem ipsum
+            dolor sit, amet consectetur adipisicing elit. Consectetur est dolor error sed sint laborum perspiciatis
+            odio. Architecto sunt fugit vitae pariatur sed saepe, quas nostrum ea praesentium reiciendis tenetur. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Debitis nobis soluta dolorem numquam architecto fuga
+            dolorum molestiae distinctio. Vitae magni officia necessitatibus vero veniam unde labore obcaecati iure
+            doloremque minus!</p>
+    </div>
+    <div class="description-down">
+        <h2 *ngIf="saga == 'N/F'; else elseBlock">Saga: undefined</h2>
+        <ng-template #elseBlock>
+            <h2>Saga: {{saga}}</h2>
+        </ng-template>
+
+        <h3 *ngIf="autor == 'N/F'; else elseBlock1">Autor: undefined</h3>
+        <ng-template #elseBlock1>
+            <h3>Autor: {{autor}}</h3>
+        </ng-template>
+
+        <h4 *ngIf="categoria == 'N/F'; else elseBlock2">Categoria: undefined</h4>
+        <ng-template #elseBlock2>
+            <h4>Categoria: {{categoria}}</h4>
+        </ng-template>
+
+        <p *ngIf="volumen == -1; else elseBlock3">Volumen: undefined</p>
+        <ng-template #elseBlock3>
+            <p>Volumen: {{volumen}}</p>
+        </ng-template>
+
+        <p *ngIf="editorial == 'N/F'; else elseBlock4">Editorial: undefined</p>
+        <ng-template #elseBlock4>
+            <p>Editorial: {{editorial}}</p>
+        </ng-template>
+        
+        <p *ngIf="fecha == -1; else elseBlock5">Fecha: undefined</p>
+        <ng-template #elseBlock5>
+            <p>Fecha: {{fecha}}</p>
+        </ng-template>
+        
+
+    </div>
+</div>
