@@ -4,7 +4,9 @@
 }
 
 .header {
+  text-align: center;
   padding: 2rem 0 2rem 0;
+  height: 8rem;
   a {
     text-decoration: none;
   }
@@ -15,76 +17,70 @@
   border-radius: 2rem;
 
   h1 {
-    margin-left: 5rem;
+    // margin-left: 5rem;
     font-family: "Poppins-Bold";
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
   }
+
   @media (max-width: 768px) {
     button {
       margin-right: 2rem;
     }
   }
 
-  
-}
-
-@media (min-width: 700px) {
-    .header {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-.searchb {
-  align-items: center;
-  margin: 1.3rem;
-  height: 2rem;
-  border-radius: 40px;
-  padding: 0.6rem 2rem;
-  background: #ddd;
-  width: 15rem;
-
-  @media (min-width: 700px) {
-    display: inline;
-    float: right;
-  }
-
-  form {
-    width: 100%;
-    input {
-      max-width: 100%;
-    }
-  }
-
-  .btn {
-    border-radius: 50%;
-    border: none;
-    background: none;
-    color: black;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
+  .searchb {
     align-items: center;
+    margin: 1.3rem;
+    height: 2rem;
+    padding: 0.4rem;
+    border-radius: 40px;
+    background: #ddd;
+    width: 90%;
 
-    &:hover {
-      background-color: #bbb;
+    @media (min-width: 500px) {
+      width: 15rem;
+      display: flex; 
+      float: right;     
+    }
+
+    form {
+      width: 100%;
+      input {
+        max-width: 90%;
+      }
+    }
+
+    .btn {
+      border-radius: 50%;
+      border: none;
+      background: none;
+      color: black;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: #bbb;
+      }
+    }
+    .text {
+      border: none;
+      background: none;
+      outline: none;
+      margin-left: 1rem;
+      color: black;
+      font-size: 16px;
+      transition: 0.6s;
+      line-height: 40px;
+      width: 364px !important;
+      font-family: "Poppins-Bold";
     }
   }
-  .text {
-    border: none;
-    background: none;
-    outline: none;
-    padding: 0;
-    color: black;
-    font-size: 16px;
-    transition: 0.6s;
-    line-height: 40px;
-    width: 364px !important;
-    font-family: "Poppins-Bold";
-  }
 }
+
 // @media (min-width: 768px) {
 //     grid-template-columns: repeat(2, 1fr);
 //     margin-left: 4rem;
@@ -107,26 +103,26 @@
 
 .books-container {
   display: grid;
-  margin-left: 9rem;
-  margin-right: 9rem;
+  // margin-left: 9rem;
+  // margin-right: 9rem;
   grid-template-columns: repeat(1, 1fr);
   justify-content: center;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 4rem;
-    margin-right: 4rem;
+    // margin-left: 4rem;
+    // margin-right: 4rem;
   }
 
   @media (min-width: 1087px) {
     grid-template-columns: repeat(3, 1fr);
-    margin-left: 4rem;
-    margin-right: 4rem;
+    // margin-left: 4rem;
+    // margin-right: 4rem;
   }
 
   @media (min-width: 1560px) {
     grid-template-columns: repeat(4, 1fr);
-    margin-left: 4rem;
-    margin-right: 10.4rem;
+    // margin-left: 4rem;
+    // margin-right: 10.4rem;
   }
 }
