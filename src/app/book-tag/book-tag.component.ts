@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {  HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
 
@@ -37,20 +37,55 @@ export class Tag {
 export class BookTagComponent implements OnInit {
   tags: Tag[] = [];
   tagsSave: Tag[] = [];
-  constructor( public router: Router, private http:HttpClient) {}
+  maxPages: Number = -1;
+  currentPage: number = 1;
+  constructor(public router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getBookTags();
+    this.getPages();
   }
 
   public getBookTags() {
     return this.http
-      .get<any>('https://biblioteca-ranchito.herokuapp.com/books')
+      .get<any>(
+        'https://biblioteca-ranchito.herokuapp.com/books?page=' +
+          this.currentPage
+      )
       .subscribe((response) => {
-        console.log(response);
+        //console.log(response);
         this.tags = response;
         this.tagsSave = this.tags;
         //console.log(this.tags[0]);
       });
+  }
+
+  public getPages() {
+    return this.http
+      .get<any>('https://biblioteca-ranchito.herokuapp.com/all-books')
+      .subscribe((response) => {
+        //console.log(response);
+        this.maxPages = Math.ceil(response / 40);
+        // console.log(this.maxPages);
+        //console.log(this.tags[0]);
+      });
+  }
+
+  public nextPage() {
+    if (this.currentPage < this.maxPages) {
+      this.currentPage = this.currentPage + 1;
+      this.ngOnInit();
+    }
+  }
+
+  public previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage = this.currentPage - 1;
+      this.ngOnInit();
+    }
+  }
+
+  public getPage() {
+    return this.currentPage;
   }
 }

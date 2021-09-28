@@ -13,4 +13,16 @@
     </div>
 </div>
 
-<app-book-tag class="books-container"></app-book-tag>
+<app-book-tag #books class="books-container"></app-book-tag>
+
+<div class="pages">
+    <button (click)="books.previousPage()">
+        <img src="../../assets/svg/before.svg" alt="go-previous">
+    </button>
+
+    <p>{{books.getPage()}}</p>
+
+    <button (click)="books.nextPage()">
+        <img src="../../assets/svg/next.svg" alt="go-next">
+    </button>
+</div>

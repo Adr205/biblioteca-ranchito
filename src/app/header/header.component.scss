@@ -125,3 +125,30 @@
     // margin-right: 10.4rem;
   }
 }
+
+.pages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 2rem 0;
+  p{
+    margin: 0 1.5rem;
+    border: 1px solid black;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  button{
+    background-color: #547fce;
+    border: none;
+    border-radius: 0.4rem;
+    img{
+      width: 2rem;
+    }
+
+    &:hover, &:focus{
+      background-color: #236cf3;
+    }
+  }
+
+}

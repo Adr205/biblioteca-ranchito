@@ -8,13 +8,15 @@ import { BookTagComponent } from './book-tag/book-tag.component';
 import { BookDescriptionComponent } from './book-description/book-description.component';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule } from '@angular/router';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BookTagComponent,
-    BookDescriptionComponent
+    BookDescriptionComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
