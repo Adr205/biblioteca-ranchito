@@ -1,7 +1,17 @@
-<div class="description-container">
+<div class="description-header">
+    <a routerLink="/">
+        <img src="../../assets/svg/arrow_back_white_24dp.svg" alt="go_back">
+    </a>
+
     <h1 id="titulo">{{tags.title}}</h1>
+</div>
+
+
+<div class="description-container">
     <div class="description-up">
-        <img src={{tags.imagen}} alt={{tags.title}}>
+        <div class="img">
+            <img src={{tags.imagen}} alt={{tags.title}}>
+        </div>
         <p>Sinopsis</p>
         <p class="sinopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus facere itaque cum
             doloremque fugiat, nobis
@@ -39,12 +49,12 @@
         <ng-template #elseBlock4>
             <p>Editorial: {{tags.editorial}}</p>
         </ng-template>
-        
+
         <p *ngIf="tags.fecha == -1; else elseBlock5">Fecha: undefined</p>
         <ng-template #elseBlock5>
             <p>Fecha: {{tags.fecha}}</p>
         </ng-template>
-        
+
 
     </div>
 </div>

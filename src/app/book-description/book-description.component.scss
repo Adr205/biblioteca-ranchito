@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url(../../assets/Poppins-Bold.otf);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #eee;
+}
+
+.description-header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: #417ef0;
+  height: 4rem;
+
+  a {
+    img {
+      margin-right: 1rem;
+      color: #fff;
+      width: 2rem;
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.description-container {
+    height: 100%;
+  display: block;
+  background-color: #888;
+  font-family: "Poppins-Bold";
+  padding: 1rem;
+
+  .description-up {
+    .img {
+      text-align: center;
+    }
+    img {
+      width: 15rem;
+    }
+  }
+}
