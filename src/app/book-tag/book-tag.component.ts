@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ThrowStmt } from '@angular/compiler';
+import { ViewportScroller } from '@angular/common';
 
 export class Tag {
   public id!: number;
@@ -39,7 +39,11 @@ export class BookTagComponent implements OnInit {
   tagsSave: Tag[] = [];
   maxPages: Number = -1;
   currentPage: number = 1;
-  constructor(public router: Router, private http: HttpClient) {}
+  constructor(
+    public router: Router,
+    private http: HttpClient,
+    private scroller: ViewportScroller
+  ) {}
 
   ngOnInit(): void {
     this.getBookTags();
@@ -74,6 +78,7 @@ export class BookTagComponent implements OnInit {
   public nextPage() {
     if (this.currentPage < this.maxPages) {
       this.currentPage = this.currentPage + 1;
+      this.goBook();
       this.ngOnInit();
     }
   }
@@ -81,11 +86,38 @@ export class BookTagComponent implements OnInit {
   public previousPage() {
     if (this.currentPage > 1) {
       this.currentPage = this.currentPage - 1;
+      this.goBook();
       this.ngOnInit();
     }
   }
 
   public getPage() {
     return this.currentPage;
+  }
+
+  goBook() {
+    this.scroller.scrollToAnchor('book');
+  }
+
+  Search(e:Event) {
+    e.preventDefault();
+    let filterText = (<HTMLInputElement>(
+      document.getElementById('searchText')
+    )).value.toLowerCase();
+
+    if(filterText != ""){
+      return this.http
+        .get<any>(
+          'http://biblioteca-ranchito.herokuapp.com/books/' + filterText
+        )
+        .subscribe((response) => {
+          this.tags = response;
+        });
+    }else{
+      this.getBookTags();
+    }
+
+    
+    
   }
 }

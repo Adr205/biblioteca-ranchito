@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="header">
+<div class="header" id="book">
     <a routerLink="/"><h1 class="titulo">Biblioteca Ranchito</h1></a>
     
     <div class="searchb">
-        <form action="">
+        <form (input)= books.Search($event);>
             <input  placeholder="Buscador" id="searchText" type="text" class="text">
             <!-- <input (input)="usr.filter()" placeholder="Buscador" id="searchText" type="text" class="text">
             <button class="btn" (click)="usr.filter()">
@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<app-book-tag #books class="books-container"></app-book-tag>
+<app-book-tag #books  id="book" class="books-container"></app-book-tag>
 
 <div class="pages">
     <button (click)="books.previousPage()">
@@ -22,7 +22,7 @@
 
     <p>{{books.getPage()}}</p>
 
-    <button (click)="books.nextPage()">
+    <button (click)="books.nextPage()" >
         <img src="../../assets/svg/next.svg" alt="go-next">
     </button>
 </div>
