@@ -108,7 +108,7 @@ export class BookTagComponent implements OnInit {
     if(filterText != ""){
       return this.http
         .get<any>(
-          'http://biblioteca-ranchito.herokuapp.com/books/' + filterText
+          'https://biblioteca-ranchito.herokuapp.com/books/' + filterText
         )
         .subscribe((response) => {
           this.tags = response;
