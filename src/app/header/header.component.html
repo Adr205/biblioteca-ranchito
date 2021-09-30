@@ -4,7 +4,7 @@
     
     <div class="searchb">
         <form >
-            <input (keydown.enter)="books.Search($event)" placeholder="Buscador" id="searchText" type="text" class="text">
+            <input (input)="books.Search($event)" placeholder="Buscador" id="searchText" type="text" class="text">
             <!-- <input (input)="usr.filter()" placeholder="Buscador" id="searchText" type="text" class="text">
             <button class="btn" (click)="usr.filter()">
                 <i class="fa fa-search "></i>
