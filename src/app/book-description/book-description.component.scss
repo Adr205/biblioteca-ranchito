@@ -10,7 +10,6 @@ h4,
 p {
   color: #eee;
 }
-
 .description-header {
   padding: 1rem;
   display: flex;
@@ -32,18 +31,24 @@ p {
 }
 
 .description-container {
-    height: 100%;
+  
+  height: 100%;
   display: block;
   background-color: #888;
   font-family: "Poppins-Bold";
   padding: 1rem;
 
   .description-up {
+    
     .img {
       text-align: center;
     }
     img {
       width: 15rem;
     }
+  }
+  .description-down{
+    margin-top: 3rem;
+    height: 37vh;
   }
 }

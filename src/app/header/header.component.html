@@ -3,8 +3,8 @@
     <a routerLink="/"><h1 class="titulo">Biblioteca Ranchito</h1></a>
     
     <div class="searchb">
-        <form >
-            <input (input)="books.Search($event)" placeholder="Buscador" id="searchText" type="text" class="text">
+        <form (submit)="books.Search($event)">
+            <input  placeholder="Buscador" id="searchText" type="text" class="text">
             <!-- <input (input)="usr.filter()" placeholder="Buscador" id="searchText" type="text" class="text">
             <button class="btn" (click)="usr.filter()">
                 <i class="fa fa-search "></i>
